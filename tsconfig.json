@@ -1,6 +1,15 @@
 {
   "compilerOptions": {
     "target": "es5",
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"],
+      "@pages/*": ["pages/*"],
+      "@components/*": ["components/*"],
+      "@utils/*": ["utils/*"],
+      "@hooks/*": ["hooks/*"],
+      "@types/*": ["types/*"]
+    },
     "lib": [
       "dom",
       "dom.iterable",
@@ -20,7 +29,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.config.ts","jest-setup.ts"],
+  "exclude": ["node_modules"]
 }
