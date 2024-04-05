@@ -9,14 +9,12 @@ import React, { useCallback, useState } from 'react';
 
 const TodoCard = ({todo , onToggle ,onDelete} : any ) => {
 
-    const [boardValue , setBoardValue] = useState(todo);
-
     return (
         <div data-testid="TodoCardForm">
-            <div data-testid="todo-toggle-view" onClick={()=>onToggle(boardValue.id)}>
-                <p style={{textDecoration : boardValue.done ? 'line-through' : 'none'}} data-testid="todo-cardview-text">{boardValue.text}</p>
+            <div data-testid="todo-toggle-view" onClick={()=>onToggle(todo.id)}>
+                <p style={{textDecoration : todo.done ? 'line-through' : 'none'}} data-testid="todo-cardview-text">{todo.text}</p>
             </div>
-            <button data-testid="todo-cardview-button" onClick={()=>onDelete(boardValue.id)} type="submit">{boardValue.buttonText}</button>
+            <button data-testid="todo-cardview-button" onClick={()=>onDelete(todo.id)} type="submit">{todo.buttonText}</button>
         </div>
     );
     

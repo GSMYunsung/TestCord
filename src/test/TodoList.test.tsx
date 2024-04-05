@@ -3,7 +3,7 @@ import TodoForm from "../components/TodoForm";
 import "@testing-library/jest-dom/extend-expect";
 import TodoList from "../components/TodoList";
 
-describe('<TodoForm />', () => {
+describe('<TodoList />', () => {
 
     const dummyData = [
         {

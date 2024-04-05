@@ -6,7 +6,7 @@ const TodoList = ({todoListData , onToggle , onRemove} : any) => {
     <ul data-testid="todo-list">
         {
             todoListData.map((todo : any) => {
-                return <div key={`todo-list-item-${todo.id}`}><TodoCard todo={todo} onToggle={onToggle} onDelete={onRemove}/></div>
+                return <div key={`todo-list-item-${todo.id}`}><TodoCard todo={todo} onToggle={(id : string)=>{onToggle(id)}} onDelete={(id : string)=>{onRemove(id)}}/></div>
             })
         }
     </ul>

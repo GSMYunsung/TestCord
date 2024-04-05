@@ -11,13 +11,13 @@ const TodoForm = ({onInsert} : any) => {
     const handleSubmit = useCallback((e : any) =>  setBoardValue(e.target.value), []);
 
     const onSubmit = useCallback((e : any) => {
-        onSubmit(boardValue);
+        onInsert(boardValue);
         setBoardValue('');
         e.preventDefault(); //새로고침 방지
     },[onInsert, boardValue]);
 
     return (
-        <form onSubmit={onInsert}>
+        <form data-testid="todo-form" onSubmit={onSubmit}>
             <input data-testid="todo-form-input" value={boardValue} onChange={handleSubmit} placeholder='Enter your todo' type="text" />
             <button data-testid="todo-form-submit-button" type="submit">Submit</button>
         </form>
